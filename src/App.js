@@ -1,13 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Fragment } from 'react';
 import './App.css';
+import Home from './Components/Home';
+//import NavBar from './Components/NavegacaoSuperior';
+import SearchAppBar from './Components/NavegacaoSuperior';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <Fragment>
+      <div className="App">
+        <Home></Home>
+      </div>
+
+    </Fragment>
+
   );
 }
 
