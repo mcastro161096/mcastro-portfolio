@@ -22,11 +22,11 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" color="inherit">Home</Link>
+         <Button><Link to="/" color="inherit">Home</Link></Button>
+          <Button><Link to="/cursos" color="inherit">Cursos que ja fiz</Link></Button>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Matheus Castro Oliveira
           </Typography>
-          {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
     </Box>
