@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
           </IconButton>
          <Button><Link to="/" color="inherit">Home</Link></Button>
           <Button><Link to="/cursos" color="inherit">Cursos que ja fiz</Link></Button>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} text-align="center" >
             Matheus Castro Oliveira
           </Typography>
         </Toolbar>

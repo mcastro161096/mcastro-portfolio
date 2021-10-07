@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ButtonAppBar from './Components/Navegacao';
 import {Switch, Route} from 'react-router-dom';
