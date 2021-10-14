@@ -3,6 +3,7 @@ import { Button, MenuItem } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ButtonAppBarCollapse from "./ButtonAppBarCollapse";
 import { Link } from 'react-router-dom';
+import { color } from "@mui/system";
 
 
 const styles = theme => ({
@@ -19,8 +20,13 @@ const styles = theme => ({
     right: 0,
     position: "fixed",
     width: "45%",
-    background: "transparent"
-  }
+    background: "transparent",
+  },
+  a: {
+    '&:hover': {
+       color: "#00b8ff !important",
+    },
+  },
 });
 
 function AppBarCollapse(props) {
@@ -36,11 +42,11 @@ function AppBarCollapse(props) {
       </ButtonAppBarCollapse>
       <div className={props.classes.buttonBar} id="appbar-collapse">
 
-        <Link to="/" style={{ color: "#ccd6f6", textDecoration: "none" }}  >Home</Link>
-        <Link to="/cursos" style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Cursos</Link>
-        <Link to="/" style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Tecnologia</Link>
-        <Link to="/" style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Projetos</Link>
-        <Link to="/" style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Contato</Link>
+        <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none" }}  >Home</Link>
+        <Link to="/cursos" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Cursos</Link>
+        <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Tecnologia</Link>
+        <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Projetos</Link>
+        <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Contato</Link>
         <Button variant="outlined" component={Link} to="/" style={{ color: "#00b8ff", borderColor: "#00b8ff", marginLeft: 20 }}>Resumo</Button>
       </div>
     </div>
