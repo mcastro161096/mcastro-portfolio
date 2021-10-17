@@ -2,8 +2,67 @@ import React from "react";
 import { Container, Typography } from "@material-ui/core";
 import { Box } from "@mui/system";
 import Typewriter from "typewriter-effect";
+import "./style.css"
+
+
 function DescricaoWrite() {
 
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
+
+    window.onload = function () {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #00b8ff}";
+        document.body.appendChild(css);
+    };
     return (
         <Box sx={{
             width: 600,
@@ -12,22 +71,36 @@ function DescricaoWrite() {
             marginTop: 20
         }}>
             <Typography style={{ color: "#00b8ff", fontSize: 14 }}>OLÁ, MEU NOME É</Typography>
-            <Typography variant="h3" component="h1" style={{ color: "#e2e9ff", fontSize: 48 }}><strong>Matheus Castro Oliveira</strong></Typography>
-            <Typography id="t" style={{ color: "#e2e9ff", fontSize: 25 }}>
-                <strong>Desenvolvedor</strong>
-                    <Typewriter options={{loop: true}} onInit={(typewriter) => {
-                    typewriter.typeString("Back-end")
+            <Typography variant="h3" component="h1" style={{ color: "#e2e9ff", fontSize: 48, marginBottom:13 }}><strong>Matheus Castro Oliveira</strong></Typography>
+
+            
+                <div className="dev" >
+                    <div><strong>Desenvolvedor</strong> </div>
+                  
+                  <div className="typewrite" data-period="2000" data-type='[ " Back-end.", " Front-end.", " Fullstack." ]'>
+                  <span className="wrap"></span>
+                      </div> 
+                </div>
+            
+
+            {/* <div className="typewriter" data-period="2000" 
+            data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                <h3>Desenvolvedor<span className="wrap"></span></h3>
+            </div> */}
+            {/* <Typewriter options={{ loop: true }} onInit={(typewriter) => {
+                typewriter.typeString("<strong>Desenvolvedor</strong> ").start();
+                typewriter.typeString("Back-end.")
                     .pauseFor(2000)
-                    .deleteAll()
-                    .typeString("Fullstack")
+                    .deleteChars(9)
+                    .typeString("Fullstack.")
                     .pauseFor(2000)
-                    .deleteAll()
-                    .typeString("Front-end")
+                    .deleteChars(10)
+                    .typeString("Front-end.")
                     .pauseFor(2000)
-                    .deleteAll()
+                    .deleteChars(10)
                     .start();
-                }} />
-            </Typography>
+            }} /> */}
+
         </Box>
     );
 }
