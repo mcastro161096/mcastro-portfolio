@@ -81,7 +81,10 @@ function DescricaoWrite() {
                   <span className="wrap"></span>
                       </div> 
                 </div>
-            
+            <Typography>
+                Sou desenvolvedor back-end em .Net e front-end em HTML, CSS, javaScript 
+                e mais recentemente adotei o React.js como principal framework para front-end, tanto em projetos pessoais quanto no trabalho.
+            </Typography>
 
             {/* <div className="typewriter" data-period="2000" 
             data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
