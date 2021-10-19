@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Typography } from "@material-ui/core";
 import { Box } from "@mui/system";
 import Typewriter from "typewriter-effect";
@@ -8,6 +8,7 @@ import { SocialIcon } from 'react-social-icons';
 
 function DescricaoWrite() {
 
+    
     var TxtType = function (el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -49,7 +50,8 @@ function DescricaoWrite() {
         }, delta);
     };
 
-    window.onload = function () {
+    useEffect( () =>{
+   
         var elements = document.getElementsByClassName('typewrite');
         for (var i = 0; i < elements.length; i++) {
             var toRotate = elements[i].getAttribute('data-type');
@@ -63,7 +65,9 @@ function DescricaoWrite() {
         css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #00b8ff}";
         document.body.appendChild(css);
-    };
+    })
+
+
     return (
         <Box sx={{
             width: 600,
