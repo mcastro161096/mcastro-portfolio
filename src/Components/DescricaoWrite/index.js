@@ -3,6 +3,7 @@ import { Container, Typography } from "@material-ui/core";
 import { Box } from "@mui/system";
 import Typewriter from "typewriter-effect";
 import "./style.css"
+import { SocialIcon } from 'react-social-icons';
 
 
 function DescricaoWrite() {
@@ -85,6 +86,9 @@ function DescricaoWrite() {
                 Sou desenvolvedor back-end em .Net e front-end em HTML, CSS, javaScript 
                 e mais recentemente adotei o React.js como principal framework para front-end, tanto em projetos pessoais quanto no trabalho.
             </Typography>
+
+            <SocialIcon url="https://github.com/mcastro161096" bgColor="#181818" fgColor="#fff" title="GitHub" style={{width:40, height:40, margin:5}}/>
+            <SocialIcon url="https://www.linkedin.com/in/matheus-castro-oliveira/" fgColor="#fff" title="LinkedIn" style={{width:40, height:40, margin:5}} />
 
             {/* <div className="typewriter" data-period="2000" 
             data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
