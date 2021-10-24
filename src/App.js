@@ -1,15 +1,15 @@
 import './App.css';
 import React from 'react';
 import ButtonAppBar from './Components/Navegacao';
-import DescricaoWrite from './Components/DescricaoWrite';
 import Rotas from './Components/Rotas';
+import { Container, Grid} from "@mui/material"
 
 function App() {
   return (
-    <div className="App">
+    <Container maxWidth="xl"  className="App">
       <ButtonAppBar />
       <Rotas />
-    </div>
+    </Container>
   );
 }
 
