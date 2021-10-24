@@ -96,8 +96,8 @@ function DescricaoWrite() {
                         e mais recentemente adotei o React.js como principal framework para front-end, tanto em projetos pessoais quanto no trabalho.
                     </Typography>
 
-                    <SocialIcon url="https://github.com/mcastro161096" bgColor="#181818" fgColor="#fff" title="GitHub" style={{ width: 40, height: 40, margin: 5 }} />
-                    <SocialIcon url="https://www.linkedin.com/in/matheus-castro-oliveira/" fgColor="#fff" title="LinkedIn" style={{ width: 40, height: 40, margin: 5 }} />
+                    <SocialIcon url="https://github.com/mcastro161096" target="_blank" bgColor="#181818" fgColor="#fff" title="GitHub" style={{ width: 40, height: 40, margin: 5 }} />
+                    <SocialIcon url="https://www.linkedin.com/in/matheus-castro-oliveira/" target="_blank" fgColor="#fff" title="LinkedIn" style={{ width: 40, height: 40, margin: 5 }} />
                 </Grid>
             </Grid>
         </Box>
