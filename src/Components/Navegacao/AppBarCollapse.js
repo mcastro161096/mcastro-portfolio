@@ -43,7 +43,7 @@ function AppBarCollapse(props) {
       <div className={props.classes.buttonBar} id="appbar-collapse">
 
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none" }}  >Home</Link>
-        <Link to="/cursos" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Cursos</Link>
+        <Link to="/Cursos" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Cursos</Link>
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Tecnologia</Link>
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Projetos</Link>
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Contato</Link>
