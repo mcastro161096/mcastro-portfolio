@@ -24,31 +24,37 @@ const styles = theme => ({
   },
   a: {
     '&:hover': {
-       color: "#00b8ff !important",
+      color: "#00b8ff !important",
     },
   },
 });
 
 function AppBarCollapse(props) {
- return (
+  return (
     <div className={props.classes.root}>
       <ButtonAppBarCollapse>
         <MenuItem><Link to="/" style={{ color: "#ccd6f6", textDecoration: "none" }}  >Home</Link></MenuItem>
-        <MenuItem><Link to="/cursos" style={{ color: "#ccd6f6", textDecoration: "none" }} >Cursos</Link></MenuItem>
-        <MenuItem><Link to="/" style={{ color: "#ccd6f6", textDecoration: "none" }} >Tecnologia</Link></MenuItem>
+        <MenuItem><Link to="/Cursos" style={{ color: "#ccd6f6", textDecoration: "none" }} >Cursos</Link></MenuItem>
+        <MenuItem><Link to="/Tecnologias" style={{ color: "#ccd6f6", textDecoration: "none" }} >Tecnologias</Link></MenuItem>
         <MenuItem><Link to="/" style={{ color: "#ccd6f6", textDecoration: "none" }} >Projetos</Link></MenuItem>
         <MenuItem><Link to="/" style={{ color: "#ccd6f6", textDecoration: "none" }} >Contato</Link></MenuItem>
-        <MenuItem><Button variant="outlined" component={Link} to="/" style={{ color: "#00b8ff", borderColor: "#00b8ff" }}>Resumo</Button></MenuItem>
+        <MenuItem>
+          <Button variant="outlined"
+            target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRQsIRvp706B3LzBE_IJb34dpcAA5xo3OXsTEKbaabpro0qZTLNcvHVVZEI3PoHh6m2gBZB2GEAMU4e/pub"
+            style={{ color: "#00b8ff", borderColor: "#00b8ff" }}>
+            Resumo
+          </Button>
+        </MenuItem>
       </ButtonAppBarCollapse>
       <div className={props.classes.buttonBar} id="appbar-collapse">
 
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none" }}  >Home</Link>
         <Link to="/Cursos" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Cursos</Link>
-        <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Tecnologia</Link>
+        <Link to="/Tecnologias" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Tecnologias</Link>
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Projetos</Link>
         <Link to="/" className={props.classes.a} style={{ color: "#ccd6f6", textDecoration: "none", marginLeft: 30 }} >Contato</Link>
         <Button variant="outlined" target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRQsIRvp706B3LzBE_IJb34dpcAA5xo3OXsTEKbaabpro0qZTLNcvHVVZEI3PoHh6m2gBZB2GEAMU4e/pub"
-         style={{ color: "#00b8ff", borderColor: "#00b8ff", marginLeft: 20 }}>Resumo
+          style={{ color: "#00b8ff", borderColor: "#00b8ff", marginLeft: 20 }}>Resumo
         </Button>
       </div>
     </div>
